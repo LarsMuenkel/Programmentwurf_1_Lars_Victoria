@@ -1,12 +1,13 @@
 #include <stdio.h>
-#include "developer_group.h"
-#include "developer.h"
-
+#include <string.h>
+#include "/workspaces/Programmentwurf_1_Lars_Victoria/include/developer.h"
+#include "/workspaces/Programmentwurf_1_Lars_Victoria/include/developer_group.h"
 
 
 int main() {
     developer dev1;
     developer dev2;
+    char logo_group_D[] = "Cool Group Logo";
     developer_group group_D;
 
     developer_init(&dev1, "Lars Muenkel", "LLars", 25);
@@ -14,6 +15,7 @@ int main() {
     developer_group_init(&group_D, "Cool Group Logo", &dev1, &dev2);
 
     int choice;
+    void displayMenu();
 
     while (1) {
         displayMenu();
@@ -22,13 +24,13 @@ int main() {
 
         switch (choice) {
             case 1:
-                listDevelopers();
+                listDevelopers(&group_D);
                 break;
             case 2:
-                printLogo();
+                printLogo(&group_D);
                 break;
             case 3:
-                printGroup();
+                printGroup(&group_D);
                 break;
             case 4:
                 printf("Exiting...\n");
@@ -41,19 +43,6 @@ int main() {
     return 0;
 }
 
-// Function to list developers
-void listDevelopers() {
-    printf("Developers:\n");
-    printf("1. Lars Muenklel\n");
-    printf("2. Victoria Vees\n");
-}
-
-
-// Function to print group information
-void printGroup() {
-    listDevelopers();
-    printLogo();
-}
 
 // Function to display the menu
 void displayMenu() {
