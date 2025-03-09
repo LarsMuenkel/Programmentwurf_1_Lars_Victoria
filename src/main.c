@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-#include "/workspaces/Programmentwurf_1_Lars_Victoria/include/developer.h"
-#include "/workspaces/Programmentwurf_1_Lars_Victoria/include/developer_group.h"
+#include "developer.h"
+#include "developer_group.h"
 
 
 int main() {
@@ -14,7 +14,7 @@ int main() {
     developer_init(&dev2, "Victoria Vees", "Vicky", 24);
     developer_group_init(&group_D, "(˵´•‿•`˵ ⑅)", &dev1, &dev2);
 
-    int choice;
+    char choice;
     void displayMenu();
 
     while (1) {
