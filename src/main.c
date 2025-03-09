@@ -7,31 +7,12 @@
 int main() {
     developer dev1;
     developer dev2;
-    const char logo_group_D[17][74] = {
-        "         __________________________________",
-        "        |                                  |",
-        "        |    +------------------------+    |",
-        "        |    |                        |    |",
-        "        |    |   ___        ___       |    |",
-        "        |    |  |   |      |   |      |    |",
-        "        |    |  |___|      |___|      |    |",
-        "        |    |                        |    |",
-        "        |    |   _____________        |    |",
-        "        |    |  |             |       |    |",
-        "        |    |  |   [    ]    |       |    |",
-        "        |    |  |   _______   |       |    |",
-        "        |    |  |  |       |  |       |    |",
-        "        |    +------------------------+    |",
-        "        |__________________________________|",
-        "               |  ____  ____  ____  |",
-        "               | |    ||    ||    | |"
-    };
 
     developer_group group_D;
 
     developer_init(&dev1, "Lars Muenkel", "LLars", 25);
     developer_init(&dev2, "Victoria Vees", "Vicky", 24);
-    developer_group_init(&group_D, &logo_group_D[17][74], &dev1, &dev2);
+    developer_group_init(&group_D, "(˵´•‿•`˵ ⑅)", &dev1, &dev2);
 
     int choice;
     void displayMenu();

@@ -3,10 +3,11 @@
 #include "developer.h"
 
 #define MAX_DEVELOPERS (2U)
+#define LOGO_LENGTH (50U)
 
 typedef struct{
     developer contributors[MAX_DEVELOPERS];
-    char logo[17][74];
+    char logo[LOGO_LENGTH];
 } developer_group;
 
 void developer_group_init(developer_group *group, const char *logo, developer *dev1, developer *dev2);

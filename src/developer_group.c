@@ -10,23 +10,24 @@ void developer_group_init(developer_group *group, const char *logo, developer *d
     
     if (MAX_DEVELOPERS > 2) {
     // Initialisiere die restlichen Entwickler mit leeren Werten falls MAX_DEVELOPERS > 2
-    for (int i = 2; i < MAX_DEVELOPERS; ++i) {
+    for (unsigned int i = 2; i < MAX_DEVELOPERS; ++i) {
         developer_init(&group->contributors[i], "", "", 0); 
     }
-    }
+
+
+}
+strcpy(group->logo, logo);
 }
 
 void printLogo(developer_group *group){
-    for (int i = 0; i < 17; i++) {
-        printf(group->logo[i]);
-        printf("\n");
-    }
+    printf("%s\n", group->logo);
 }
+
 
 void listDevelopers(developer_group *group) {
     printf("Developers:\n");
     printf("Developer 1: %s alias %s\n", group->contributors[0].name, group->contributors[0].alias); 
-    printf("Developer 2: %s alias %s\n", group->contributors[1].name, group->contributors[1].alias); 
+    printf("Developer 2: %s alias %s\n\n", group->contributors[1].name, group->contributors[1].alias); 
 }
 
 void printGroup(developer_group *group) {
