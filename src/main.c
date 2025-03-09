@@ -1,12 +1,18 @@
 #include <stdio.h>
+#include "developer_group.h"
+#include "developer.h"
 
-// Function declarations
-void listDevelopers();
-void printLogo();
-void printGroup();
-void displayMenu();
+
 
 int main() {
+    developer dev1;
+    developer dev2;
+    developer_group group_D;
+
+    developer_init(&dev1, "Lars Muenkel", "LLars", 25);
+    developer_init(&dev2, "Victoria Vees", "Vicky", 24);
+    developer_group_init(&group_D, "Cool Group Logo", &dev1, &dev2);
+
     int choice;
 
     while (1) {
@@ -42,21 +48,6 @@ void listDevelopers() {
     printf("2. Victoria Vees\n");
 }
 
-// Function to print a cool group logo
-void printLogo() {
-    printf("Cooler Group Logo:\n");
-    printf("  ____ _                 _       \n");
-    printf(" / ___| | ___  _   _  __| | ___  \n");
-    printf("| |   | |/ _ \\| | | |/ _` |/ _ \\ \n");
-    printf("| |___| | (_) | |_| | (_| |  __/ \n");
-    printf(" \\____|_|\\___/ \\__,_|\\__,_|\\___| \n");
-    printf("  ____                           \n");
-    printf(" / ___| ___ _ __   __ _  ___ ___ \n");
-    printf("| |  _ / _ \\ '_ \\ / _` |/ __/ _ \\\n");
-    printf("| |_| |  __/ | | | (_| | (_|  __/\n");
-    printf(" \\____|\\___|_| |_|\\__,_|\\___\\___|\n");
-
-}
 
 // Function to print group information
 void printGroup() {

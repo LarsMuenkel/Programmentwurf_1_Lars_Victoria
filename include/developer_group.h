@@ -10,4 +10,6 @@ typedef struct{
     char logo[MAX_LOGO_SIZE];
 } developer_group;
 
+void developer_group_init(developer_group *group, const char *logo);
+
 #endif
