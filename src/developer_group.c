@@ -4,7 +4,7 @@
 #include "/workspaces/Programmentwurf_1_Lars_Victoria/include/developer_group.h"
 
 
-void developer_group_init(developer_group *group, const char *logo, developer *dev1, developer *dev2) {     
+void developer_group_init(developer_group *group, const char *logo, developer *dev1, developer *dev2) {
     group->contributors[0] = *dev1;
     group->contributors[1] = *dev2;
     
@@ -17,7 +17,10 @@ void developer_group_init(developer_group *group, const char *logo, developer *d
 }
 
 void printLogo(developer_group *group){
-    printf("%s\n", group->logo);
+    for (int i = 0; i < 17; i++) {
+        printf(group->logo[i]);
+        printf("\n");
+    }
 }
 
 void listDevelopers(developer_group *group) {

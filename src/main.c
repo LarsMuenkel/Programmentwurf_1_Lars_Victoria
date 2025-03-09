@@ -7,20 +7,39 @@
 int main() {
     developer dev1;
     developer dev2;
-    char logo_group_D[] = "Cool Group Logo";
+    const char logo_group_D[17][74] = {
+        "         __________________________________",
+        "        |                                  |",
+        "        |    +------------------------+    |",
+        "        |    |                        |    |",
+        "        |    |   ___        ___       |    |",
+        "        |    |  |   |      |   |      |    |",
+        "        |    |  |___|      |___|      |    |",
+        "        |    |                        |    |",
+        "        |    |   _____________        |    |",
+        "        |    |  |             |       |    |",
+        "        |    |  |   [    ]    |       |    |",
+        "        |    |  |   _______   |       |    |",
+        "        |    |  |  |       |  |       |    |",
+        "        |    +------------------------+    |",
+        "        |__________________________________|",
+        "               |  ____  ____  ____  |",
+        "               | |    ||    ||    | |"
+    };
+
     developer_group group_D;
 
     developer_init(&dev1, "Lars Muenkel", "LLars", 25);
     developer_init(&dev2, "Victoria Vees", "Vicky", 24);
-    developer_group_init(&group_D, "Cool Group Logo", &dev1, &dev2);
+    developer_group_init(&group_D, &logo_group_D[17][74], &dev1, &dev2);
 
     int choice;
     void displayMenu();
 
     while (1) {
         displayMenu();
-        printf("Choose your action: ");
         scanf("%d", &choice);
+        printf("\n");
 
         switch (choice) {
             case 1:
@@ -48,7 +67,8 @@ int main() {
 void displayMenu() {
     printf("\nMenu:\n");
     printf("1. List developers\n");
-    printf("2. Print a cool group logo\n");
-    printf("3. Print group (name of developers and logo)\n");
+    printf("2. Print group logo\n");
+    printf("3. Print group\n");
     printf("4. Exit\n");
+    printf("Choose your action: ");
 }
