@@ -3,18 +3,22 @@
 #include <stdio.h>
 #include <string.h>
 
-void developer_init(developer *dev, const char *name, const char *alias, int age)
+// creating a new developer with name_ptr, alias and age
+void developer_init(developer * dev_ptr, const char * const name_ptr, const char * const alias_ptr)
 {
-    if (dev == NULL || name == NULL || alias == NULL) {
+    // checking if the pointers are not null (valid)
+    if (dev_ptr == NULL || name_ptr == NULL || alias_ptr == NULL) {
         fprintf(stderr, "Error: Null pointer passed to developer_init\n");
         return;
     }
 
-    strncpy(dev->name, name, NAME_LENGTH - 1);
-    dev->name[NAME_LENGTH - 1] = '\0';  // Sicherstellen, dass der String nullterminiert ist
+    // copying the string, name_ptr points to, to the developer
+    strncpy(dev_ptr->name, name_ptr, MAX_NAME_LENGTH - 1);
+    dev_ptr->name[MAX_NAME_LENGTH - 1] = '\0';  
 
-    strncpy(dev->alias, alias, ALIAS_LENGTH - 1);
-    dev->alias[ALIAS_LENGTH - 1] = '\0';  // Sicherstellen, dass der String nullterminiert ist
+    // copying the string, alias_ptr points to, to the developer
+    strncpy(dev_ptr->alias, alias_ptr, MAX_ALIAS_LENGTH - 1);
+    dev_ptr->alias[MAX_ALIAS_LENGTH - 1] = '\0';  
 
-    dev->age = age;
+   
 }

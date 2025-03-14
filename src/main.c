@@ -1,5 +1,8 @@
 // include developer_group.h including developer.h stdio.h and string.h
 #include "developer_group.h"
+#include "developer.h"
+#include <stdio.h>
+#include <string.h>
 
 // main function
 int main() {
@@ -8,11 +11,13 @@ int main() {
     developer dev2;
     // creating a group of developers of type developer_group named group_D
     developer_group group_D;
+    // creating a group logo of type char array
+    char grouplogo[] = "ʕ•́ᴥ•̀ʔっ♡";
 
-    // initializing the developers dev1 and dev2 as well as the developer group group_D
-    developer_init(&dev1, "Lars Muenkel", "LLars", 25);
-    developer_init(&dev2, "Victoria Vees", "Vicky", 24);
-    developer_group_init(&group_D, "ʕ•́ᴥ•̀ʔっ♡", &dev1, &dev2);
+    // initializing the developers dev1 and dev2 with name and alias as well as the developer group group_D
+    developer_init(&dev1, "Lars Muenkel", "LLars");
+    developer_init(&dev2, "Victoria Vees", "Vicky");
+    developer_group_init(&group_D, grouplogo, &dev1, &dev2);
 
     // declaring the function displayMenu and the variable choice as unsigned char for memory optimization
     void displayMenu();
