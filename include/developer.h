@@ -6,7 +6,7 @@
 #define MAX_ALIAS_LENGTH (25U)
 //defining the structure developer with the attributes name and alias
 typedef struct {
-    char name[MAX_NAME_LENGTH];
+char name[MAX_NAME_LENGTH];
     char alias[MAX_ALIAS_LENGTH];
 } developer;
 

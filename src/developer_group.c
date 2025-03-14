@@ -1,15 +1,17 @@
 #include "developer_group.h"
-#include "developer.h"
 
 #include <stdio.h>
 #include <string.h>
 
+#include "developer.h"
 
 // initializing a developer group with the given logo and two developers
-void developer_group_init(developer_group *group_ptr, const char * const logo_ptr, developer *dev1_ptr, developer *dev2_ptr)
+void developer_group_init(developer_group *group_ptr, const char *const logo_ptr, developer *dev1_ptr,
+                          developer *dev2_ptr)
 {
     // checking if the pointers are not null (valid)
-    if (group_ptr == NULL || logo_ptr == NULL || dev1_ptr == NULL || dev2_ptr == NULL) {
+    if (group_ptr == NULL || logo_ptr == NULL || dev1_ptr == NULL || dev2_ptr == NULL)
+    {
         printf(stderr, "Error: Null pointer passed to developer_group_init\n");
         return;
     }
@@ -29,12 +31,12 @@ void developer_group_init(developer_group *group_ptr, const char * const logo_pt
     strcpy(group_ptr->logo, logo_ptr);
 }
 
-
 // printing the logo of a developer group
 void printLogo(developer_group *group_ptr)
 {
     // checking if the pointer is not null (valid)
-    if (group_ptr == NULL) {
+    if (group_ptr == NULL)
+    {
         fprintf(stderr, "Error: Null pointer passed to printLogo\n");
         return;
     }
@@ -45,7 +47,8 @@ void printLogo(developer_group *group_ptr)
 void listDevelopers(developer_group *group_ptr)
 {
     // checking if the pointer is not null (valid)
-    if (group_ptr == NULL) {
+    if (group_ptr == NULL)
+    {
         fprintf(stderr, "Error: Null pointer passed to listDevelopers\n");
         return;
     }
@@ -58,7 +61,8 @@ void listDevelopers(developer_group *group_ptr)
 void printGroup(developer_group *group_ptr)
 {
     // checking if the pointer is not null (valid)
-    if (group_ptr == NULL) {
+    if (group_ptr == NULL)
+    {
         fprintf(stderr, "Error: Null pointer passed to printGroup\n");
         return;
     }
